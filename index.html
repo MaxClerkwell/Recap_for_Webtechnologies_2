@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Webtechnologien 2 – Wiederholung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+    <style>
+        .image-credit {
+            position: absolute;
+            bottom: -40em;
+            right: 0em;
+            font-size: 0.4em;
+            color: #fff; /* für dunkle Hintergründe */
+            background-color: rgba(0, 0, 0, 0.5); /* Optional für Lesbarkeit */
+            padding: 0.3em 0.6em;
+            border-radius: 4px;
+            z-index: 10;
+        }
+
+        .reveal .slides {
+            height: 100%;
+            top: 0;
+            margin-top: 0;
+        }
+
+        .reveal .slides>section {
+            min-height: 90%;
+        }
+
+        .reveal .slides>section>section {
+            min-height: 100%;
+        }
+
+        .svg-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2em;
+            height: 100vh;
+        }
+
+            .svg-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 1em;
+            margin: 1em 0;
+            border-radius: 8px;
+            width: 60%;
+            max-width: 600px;
+        }
+
+            .svg-box svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>Wiederholung</h1>
+          <p>Webtechnologien 2</p>
+          <p><small>Stephan Bökelmann - HSBO - SoSe 2025</small></p>
+        </section>
+
+        <section>
+            <section>
+                <h2>Ziele & Notwendigkeiten von Webtechnologien</h2>
+                <div style="display: flex; justify-content: space-around; gap: 4em; margin-top: 2em;font-size: 0.75em;">
+                  
+                  <!-- Linke Spalte: Ziele -->
+                  <div style="flex: 1;">
+                    <h3>Ziele</h3>
+                    <ul>
+                      <li>Fragen stellen</li>
+                      <li>Antworten geben</li>
+                      <li>Daten synchronisieren</li>
+                      <li>Benachrichtigungen verschicken</li>
+                      <li>Anwendungen gemeinsam nutzen</li>
+                    </ul>
+                  </div>
+                  
+                  <!-- Rechte Spalte: Notwendigkeiten -->
+                  <div style="flex: 1;">
+                    <h3>Notwendigkeiten</h3>
+                    <ul>
+                      <li>Protokolle / Absprachen</li>
+                      <li>Physikalische Übertragungsmedien</li>
+                      <li>Maintainbarer Code</li>
+                      <li>Skalierbare Infrastruktur</li>
+                      <li>Barrierefreiheit aber Sicherheit</li>
+                    </ul>
+                  </div>
+                  
+                </div>
+            </section>
+        </section>
+              
+        <section>
+            <section>
+                <h2>Informationen und deren Übertragung</h2>
+                <blockquote>
+                    "Information is everything that reduces uncertainty"<br>
+                    <small>– Claude Shannon, *A Mathematical Theory of Communication*, 1948</small>
+                </blockquote>
+                Ein Bildschirm hat 307.200 Pixel, in welchem Zustand befinden sich diese?<br>
+                Zufällig? -> Keine Information<br>
+                Vorhersagbar? -> Hohes Maß an Information<br>
+            </section>
+            <section>
+                <h2>Entropie einer Nachricht</h2>
+                <div style="display: flex; justify-content: space-between; gap: 3em; margin-top: 2em;font-size: 0.5em;">
+              
+                  <!-- Linke Spalte: Konzept -->
+                  <div style="flex: 1;">
+                    <h3>🧠 Grundidee</h3>
+                    <ul>
+                      <li><strong>Information</strong> reduziert <em>Unsicherheit</em></li>
+                      <li><strong>Entropie</strong> misst den Informationsgehalt einer Quelle</li>
+                      <li>Je <em>unvorhersehbarer</em> ein Symbol, desto mehr Information trägt es</li>
+                      <br>
+                    </ul>
+              
+                    <h3>📏 Formel</h3>
+                    <p style="font-size: 1.4em; text-align: center;">
+                      \( H(X) = - \sum_{i} p(x_i) \log_2 p(x_i) \)
+                    </p>
+                    <p style="font-size: 0.9em; text-align: center;">
+                      (X = Zufallsvariable, \(p(x_i)\) = Wahrscheinlichkeit für Symbol \(x_i\))
+                    </p>
+                  </div>
+              
+                  <!-- Rechte Spalte: Beispiele -->
+                  <div style="flex: 1;">
+                    <h3>📊 Beispiele</h3>
+                    <ul>
+                      <li><strong>Münzwurf (fair):</strong> 1 Bit</li>
+                      <li><strong>Münze zeigt immer Kopf:</strong> 0 Bit</li>
+                      <li><strong>Alphabete mit gleichverteilten Buchstaben:</strong> Hohe Entropie</li>
+                      <li><strong>Natürliche Sprache:</strong> Redundanz → geringere Entropie</li>
+                      <br>
+                    </ul>
+              
+                    <h3>💡 Anwendungen</h3>
+                    <ul>
+                      <li>Kompression (z. B. ZIP, PNG)</li>
+                      <li>Kryptographie</li>
+                      <li>Übertragungstheorie</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h2>Was ist eine Nachricht?</h2>
+                <div style="display: flex; gap: 3em; font-size: 0.9em; margin-top: 1em;font-size: 0.5em;">
+              
+                  <!-- Linke Spalte: Definition + Aufbau -->
+                  <div style="flex: 1;">
+                    <h3>📦 Definition</h3>
+                    <p>Eine <strong>Nachricht</strong> ist eine strukturierte Einheit von Daten, die über ein Netzwerk zwischen zwei Kommunikationspartnern ausgetauscht wird.</p>
+                    <br>
+                    <h3>🧩 Aufbau</h3>
+                    <ul>
+                      <li><strong>Header:</strong> Metadaten (z. B. Protokoll, Authentifizierung)</li>
+                      <li><strong>Body:</strong> Nutzdaten (z. B. JSON, Binärdaten)</li>
+                      <br>
+                    </ul>
+              
+                    <h3>✉️ Analogie</h3>
+                    <p><em>„Eine Nachricht ist wie ein Brief mit Umschlag und Inhalt.“</em></p>
+                  </div>
+              
+                  <!-- Rechte Spalte: Beispiele -->
+                  <div style="flex: 1;">
+                    <h3>📡 Beispiele</h3>
+                    <ul>
+                      <li><strong>HTTP:</strong> <code>GET /api/user</code> → JSON-Antwort</li>
+                      <li><strong>WebSocket:</strong> <code>{ "type": "chat", "msg": "Hallo" }</code></li>
+                      <li><strong>MQTT:</strong> <code>topic: sensors/temp, payload: 21.3</code></li>
+                      <li><strong>Webhook:</strong> GitHub → POST bei Push</li>
+                      <br>
+                    </ul>
+              
+                    <h3>🔁 Eigenschaften</h3>
+                    <ul>
+                      <li>Synchron / Asynchron</li>
+                      <li>Zustandslos (HTTP) / Zustandsbehaftet (MQTT, WebSocket)</li>
+                      <li>Standardisiert (JSON, XML, ProtoBuf)</li>
+                    </ul>
+                  </div>
+              
+                </div>
+              </section>
+              <section>
+                <h2>Nachrichten im OSI Stack</h2>
+                <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 2em; margin-top: 1em;">
+                  <p style="font-size: 0.3em; text-align: center; max-width: 60ch;">
+                    Im OSI-Modell wird eine Nachricht durch alle Schichten hindurch verarbeitet. Jede Schicht fügt dabei ihre eigene <strong>Header-Information</strong> hinzu oder interpretiert sie, bis am Ende die reine Nutzlast übrig bleibt.
+                  </p>
+                  <object type="image/svg+xml" data="https://maxclerkwell.github.io/svg_storage/fundamentals/transmission/isoosi-stack/overview_german.svg" style="width: 80%; max-width: 1000px; height: auto;">
+                    Dein Browser unterstützt keine eingebetteten SVGs.
+                  </object>
+                  <p style="font-size: 1em; color: gray;">
+                    Quelle: Michael von Brandenburg, 2022 – <a href="https://commons.wikimedia.org/wiki/File:ISO-OSI-7-Schichten-Modell_(in_Deutsch).svg" target="_blank">Wikimedia</a>
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h2>Nachrichten im OSI Stack</h2>
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1em;">
+              
+                  <!-- Großes zentriertes SVG -->
+                  <object 
+                    type="image/svg+xml" 
+                    data="https://maxclerkwell.github.io/svg_storage/fundamentals/transmission/isoosi-stack/overview_german.svg" 
+                    style="width: 90%; height: 80vh; max-width: 1200px;">
+                    Dein Browser unterstützt keine eingebetteten SVGs.
+                  </object>
+              
+                  <!-- Kleine Beschreibung darunter -->
+                  <p style="font-size: 0.5em; color: gray; text-align: center; margin-top: 1em;">
+                    Nachrichten wandern von oben nach unten durch die Schichten (Sender) und von unten nach oben beim Empfänger.<br>
+                    Quelle: Michael von Brandenburg, 2022 – 
+                    <a href="https://commons.wikimedia.org/wiki/File:ISO-OSI-7-Schichten-Modell_(in_Deutsch).svg" target="_blank">
+                      Wikimedia Commons
+                    </a>
+                  </p>
+              
+                </div>
+              </section>
+              <section>
+                <h2>Nachrichten im OSI Stack</h2>
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 100%; padding-top: 1em;">
+              
+                  <!-- SVG etwas höher und nicht zu hoch -->
+                  <object 
+                    type="image/svg+xml" 
+                    data="https://maxclerkwell.github.io/svg_storage/fundamentals/transmission/isoosi-stack/overview_german.svg" 
+                    style="width: 90%; max-width: 1100px; height: 65vh;">
+                    Dein Browser unterstützt keine eingebetteten SVGs.
+                  </object>
+              
+                </div>
+              </section>
+              
+              
+              
+              
+              
+              
+
+
+        <section>
+          <h2>Fragen &amp; Diskussion</h2>
+          <p>Stephan Bökelmann</p>
+          <p>sb@gruppe.ai</p>
+          <p>Github: MaxClerkwell</p>
+          <p>RUB - NB 2/29</p>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/math/math.js"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        transition: 'fade',
+        plugins: [ RevealMath.MathJax3 ]
+      });
+    </script>
+  </body>
+</html>
